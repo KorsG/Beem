@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beem", "Beem\Beem.csproj", "{A39478EE-FF4E-4070-ABAD-97873AF7994B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{DED2D851-7054-4396-9730-5B6D05F614AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beem.Tests", "Beem.Tests\Beem.Tests.csproj", "{35060A78-A4A2-4C8A-A56A-70D79CD8756B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F0C8EDB-05B4-4968-8DF4-4BBDE985561D}"
+	ProjectSection(SolutionItems) = preProject
+		AssemblyCommon.cs = AssemblyCommon.cs
+		..\Beem.png = ..\Beem.png
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A39478EE-FF4E-4070-ABAD-97873AF7994B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39478EE-FF4E-4070-ABAD-97873AF7994B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39478EE-FF4E-4070-ABAD-97873AF7994B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39478EE-FF4E-4070-ABAD-97873AF7994B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED2D851-7054-4396-9730-5B6D05F614AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED2D851-7054-4396-9730-5B6D05F614AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED2D851-7054-4396-9730-5B6D05F614AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED2D851-7054-4396-9730-5B6D05F614AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35060A78-A4A2-4C8A-A56A-70D79CD8756B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35060A78-A4A2-4C8A-A56A-70D79CD8756B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35060A78-A4A2-4C8A-A56A-70D79CD8756B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35060A78-A4A2-4C8A-A56A-70D79CD8756B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+		<id>Beem</id>
+		<title>Beem</title>
+		<version>0.0.0</version>
+		<authors>Morten Korsgaard</authors>
+		<owners>Morten Korsgaard</owners>
+		<description>Database connection and transaction framework for .NET</description>
+		<licenseUrl>https://raw.githubusercontent.com/KorsG/Beem/master/LICENSE.txt</licenseUrl>
+		<projectUrl>https://github.com/KorsG/Beem</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/KorsG/Beem/master/Beem.png</iconUrl>
+		<copyright>Copyright © 2016 Morten Korsgaard</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<releaseNotes></releaseNotes>
+		<tags></tags>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System.Transactions" />
+		</frameworkAssemblies>
+	</metadata>
+	<files>
+		<file src="bin/$configuration$/Beem.dll" target="lib/net45" /> 
+		<file src="../../LICENSE.txt" /> 
+	</files>
+</package>
