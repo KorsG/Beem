@@ -45,9 +45,47 @@ namespace Beem.Tests
         public void Can_begin_nested()
         {
             using (var cs1 = _scopeFactory.CreateConnectionScope<TestDbConnectionScope>())
-            using (var cs2 = cs1.BeginNested() as DbConnectionScope)
+            using (var cs2 = cs1.BeginNested())
             {
                 Assert.False(cs2._isRootScope);
+            }
+        }
+
+        [Fact]
+        public void Dispose_should_dispose_transactionScope_if_created_by_the_connectionScope()
+        {
+            TestDbConnectionScope cs1 = null;
+            DbTransactionScope tx1 = null;
+            try
+            {
+                cs1 = _scopeFactory.CreateConnectionScope<TestDbConnectionScope>();
+                tx1 = cs1.BeginTransactionScope() as DbTransactionScope;
+                cs1.Dispose();
+                Assert.True(tx1._disposed);
+            }
+            finally
+            {
+                cs1?.Dispose();
+                tx1?.Dispose();
+            }
+        }
+
+        [Fact]
+        public void Dispose_should_not_dispose_transactionScope_if_not_created_by_the_connectionScope()
+        {
+            TestDbConnectionScope cs1 = null;
+            DbTransactionScope tx1 = null;
+            try
+            {
+                tx1 = _scopeFactory.CreateTransactionScope() as DbTransactionScope;
+                cs1 = tx1.GetConnectionScope<TestDbConnectionScope>();
+                cs1.Dispose();
+                Assert.False(tx1._disposed);
+            }
+            finally
+            {
+                cs1?.Dispose();
+                tx1?.Dispose();
             }
         }
     }

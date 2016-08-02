@@ -123,6 +123,8 @@ END;
 
 CREATE DATABASE [{DatabaseName}];
 ALTER DATABASE [{DatabaseName}] SET READ_COMMITTED_SNAPSHOT ON;
+
+EXEC sp_executesql N'
 USE [{DatabaseName}];
 
 CREATE TABLE [dbo].[Customer] (
@@ -136,6 +138,7 @@ CREATE TABLE [dbo].[Log] (
     [Value] [nvarchar](255),
     CONSTRAINT [PK_dbo.Log] PRIMARY KEY ([LogID])
 );
+';
 ";
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();

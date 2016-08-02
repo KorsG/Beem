@@ -195,7 +195,7 @@ namespace Beem.Tests
         }
 
         [Fact]
-        public void Connections_created_by_transaction_should_dispose_when_transaction_is_disposed()
+        public void ConnectionScopes_created_by_transactionScope_should_be_disposed_when_transactionScope_is_disposed()
         {
             TestDbConnectionScope cs = null;
             using (var tx = CreateDefaultScope())

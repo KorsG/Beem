@@ -29,6 +29,7 @@ namespace Beem
     {
         private readonly DbConnection _connection;
         private IDbTransactionScope _currentTransactionScope;
+        private bool _ownsCurrentTransactionScope;
         private readonly System.Transactions.IsolationLevel _defaultIsolationLevel;
 
         private DbConnectionScope _rootScope { get; set; }
@@ -38,6 +39,8 @@ namespace Beem
         public DbConnection Connection => _rootScope._connection;
 
         internal IDbTransactionScope CurrentTransactionScope { get { return _rootScope._currentTransactionScope; } set { _rootScope._currentTransactionScope = value; } }
+
+        internal bool OwnsCurrentTransactionScope { get { return _rootScope._ownsCurrentTransactionScope; } set { _rootScope._ownsCurrentTransactionScope = value; } }
 
         private DbConnectionScope() { }
 
@@ -84,6 +87,7 @@ namespace Beem
         {
             if (CurrentTransactionScope == null || CurrentTransactionScope.Completed)
             {
+                OwnsCurrentTransactionScope = true;
                 return CurrentTransactionScope = new DbTransactionScope(this, isolationLevel, timeoutInSeconds);
             }
             else
@@ -105,7 +109,7 @@ namespace Beem
                     // Only dispose if current scope is "root".
                     if (_isRootScope == true)
                     {
-                        if (CurrentTransactionScope != null)
+                        if (OwnsCurrentTransactionScope && CurrentTransactionScope != null)
                         {
                             CurrentTransactionScope.Dispose();
                             CurrentTransactionScope = null;

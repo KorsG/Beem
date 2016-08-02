@@ -120,6 +120,7 @@ namespace Beem
                 // First time we've been asked for this particular DbScope type, create one and cache it.
                 var scope = DbScopeConfig.CreateConnectionScope(dbConnectionScopeType);
                 scope.CurrentTransactionScope = this;
+                scope.OwnsCurrentTransactionScope = false;
                 AddConnectionScopeEnlistment(scope, true);
             }
 
@@ -297,7 +298,7 @@ namespace Beem
 
         #region IDisposable Implementation
 
-        private bool _disposed = false;
+        internal bool _disposed = false;
 
         protected virtual void Dispose(bool disposing)
         {
