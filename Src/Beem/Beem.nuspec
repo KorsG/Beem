@@ -10,7 +10,7 @@
 		<licenseUrl>https://raw.githubusercontent.com/KorsG/Beem/master/LICENSE.txt</licenseUrl>
 		<projectUrl>https://github.com/KorsG/Beem</projectUrl>
 		<iconUrl>https://raw.githubusercontent.com/KorsG/Beem/master/Beem.png</iconUrl>
-		<copyright>Copyright © 2016 Morten Korsgaard</copyright>
+		<copyright>Copyright © 2017 Morten Korsgaard</copyright>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<releaseNotes></releaseNotes>
 		<tags></tags>
@@ -19,7 +19,8 @@
 		</frameworkAssemblies>
 	</metadata>
 	<files>
-		<file src="bin/$configuration$/Beem.dll" target="lib/net45" /> 
-		<file src="../../LICENSE.txt" /> 
+		<file src="bin/$configuration$/Beem.dll" target="lib/net45" />
+    <file src="bin/$configuration$/Beem.xml" target="lib/net45" />
+    <file src="../../LICENSE.txt" /> 
 	</files>
 </package>
