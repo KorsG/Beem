@@ -71,13 +71,11 @@ namespace Beem
             return scope;
         }
 
-        /// <inheritdoc />
         public IDbTransactionScope BeginTransactionScope(int timeoutInSeconds = 30)
         {
             return BeginTransactionScope(DbScopeConfig.DefaultTransactionIsolationLevel, timeoutInSeconds);
         }
 
-        /// <inheritdoc />
         public IDbTransactionScope BeginTransactionScope(System.Transactions.IsolationLevel isolationLevel, int timeoutInSeconds = 30)
         {
             if (CurrentTransactionScope == null || CurrentTransactionScope.Completed)
